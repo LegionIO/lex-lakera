@@ -32,7 +32,7 @@ module Legion
           module_function
 
           def from_response(status:, body:)
-            error_hash  = body.is_a?(Hash) ? (body[:error] || body['error']) : nil
+            error_hash  = body.is_a?(Hash) ? (body[:error] || body['error']) : nil # rubocop:disable Legion/Framework/ApiStringKeys
             error_type  = error_hash.is_a?(Hash) ? (error_hash[:type] || error_hash['type']) : nil
             message     = error_hash.is_a?(Hash) ? (error_hash[:message] || error_hash['message']) : nil
             message   ||= body.to_s

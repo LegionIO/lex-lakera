@@ -10,9 +10,7 @@ module Legion
           module_function
 
           def handle_response(response)
-            unless response.status >= 200 && response.status < 300
-              raise Errors.from_response(status: response.status, body: response.body)
-            end
+            raise Errors.from_response(status: response.status, body: response.body) unless response.status >= 200 && response.status < 300
 
             { result: response.body, status: response.status }
           end

@@ -1,0 +1,9 @@
+inherit_gem:
+  rubocop-legion: config/lex.yml
+
+Naming/VariableNumber:
+  AllowedIdentifiers:
+    - us_east_1
+    - us_west_2
+    - eu_west_1
+    - ap_southeast_1
